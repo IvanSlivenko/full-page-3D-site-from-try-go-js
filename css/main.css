@@ -146,6 +146,34 @@
   z-index: -2;
   opacity: 0.1;
 }
+.container .links {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .links a {
+  text-decoration: none;
+  color: #eee;
+  padding: 0.07rem 0;
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hide 0.5s forwards ease;
+}
+.container .links ul {
+  list-style: none;
+}
 
 .container.active .bar {
   transform: rotate(360deg);
@@ -176,6 +204,9 @@
   transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
   transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
 }
+.container.active .links a {
+  animation: appear 0.5s forwards ease var(--i);
+}
 
 @keyframes main-animation {
   from {
@@ -205,5 +236,20 @@
   }
   100% {
     transform: perspective(1300px) rotateY(20deg) translateY(120px) scale(0.5);
+  }
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
   }
 }/*# sourceMappingURL=main.css.map */
