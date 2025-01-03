@@ -27,6 +27,11 @@ function changeBg() {
             container.classList.toggle('active')
         })
     })
+
+    screens.forEach(screen =>  {
+        screen.style.display='none'
+        screen[0].style.display='block'
+    })
 }
 
 changeBg();
